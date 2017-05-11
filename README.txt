@@ -18,6 +18,7 @@ The API commands are
   stop()
   goto_home() 
 
+The library constantly re-computes the absolute angle for the pan and tilt based on the previous position and the current speed. A simple ASCII protocol is used to pass commands into the spawned python program.
 
 The library is being used by Roger Hardiman's fork of RPOS.
 RPOS started life as the Raspberry Pi ONVIF Server but now runs on more than just the Raspberry Pi.
