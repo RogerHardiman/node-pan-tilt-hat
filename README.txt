@@ -1,8 +1,7 @@
 Node Pan-Tilt HAT library
 (c) 2017 Roger Hardiman
 
-This library provides an easy way for NodeJS applications to use the Raspberry Pi Pan-Tilt HAT (made by Pimoroni) with the AdaFruit Pan/Tilt
-assembly.
+This library provides an easy way for NodeJS applications to use the Raspberry Pi Pan-Tilt HAT (made by Pimoroni) with the AdaFruit Pan/Tilt assembly.
 It spawns a background python process to communicate with the Pan-Tilt HAT and this python process make use of Pimoroni's python libraries.
 You must install python and install the Pimoroni Pan-Tilt HAT python libraries before using this code.
 
@@ -21,33 +20,15 @@ The API commands are
 
 
 The library is being used by Roger Hardiman's fork of RPOS.
-RPOS started life as the Raspberry Pi ONVIF Server but now runs on more than
-just the Raspberry Pi.
+RPOS started life as the Raspberry Pi ONVIF Server but now runs on more than just the Raspberry Pi.
 Roger Hardiman's fork fixes some bugs and adds ONVIF PTZ Control.
 
-CCTV Viewing Software that uses the ONVIF Standard can connect to the
-Raspberry Pi, stream live video and control the Pimoroni Pan-Tilt HAT and
-AdaFruit Pan/Tilt assembly from their CCTV viewing software.
+CCTV Viewing Software that uses the ONVIF Standard can connect to the Raspberry Pi, stream live video and control the Pimoroni Pan-Tilt HAT and AdaFruit Pan/Tilt assembly from their CCTV viewing software.
 
 
 
 
 Future Additions
 Adding the ability to store positions and return to that position
-(this is Store Preset and Goto Preset or Set and Shot in CCTV terminology)
 Adding the ability to use ONVIF Absolute PTZ commands
 
-B
-
-of the RPOS Raspberry Pi ONVIF Server and CCTV viewing software using the
-industry standard ONVIF protocol can stream live video from the Raspberry Pi
-and control the Pan-Tilt HAT with ONVIF PTZ commands.
-
-
-This library implements Pan, Tilt and Stop commands like an old analogue CCTV
-system. pan_left(speed) and pan_right(speed) start the camera moving.
-The Pan/Tilt unit continues to move until a Stop() command is issued or a speed of zero is used.
-
-
-Future Work
-Would be nice to change this to support ONVIF Absolute Positioning
