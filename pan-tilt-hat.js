@@ -29,7 +29,7 @@ class PanTiltHAT {
   }
 
   calculate_angles() {
-    console.log('pan=' + this.pan_position + ' tilt=' + this.tilt_position);
+    //console.log('pan=' + this.pan_position + ' tilt=' + this.tilt_position);
     this.pan_position = this.pan_position + (this.pan_speed/10);
     this.tilt_position = this.tilt_position + (this.tilt_speed/10);
     if (this.pan_position > 90) this.pan_position = 90;
