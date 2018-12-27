@@ -69,6 +69,7 @@ class PanTiltHAT {
   // Alias for Servo One and Servo Two 
   pan(angle)  { this.servo_one(angle); };
   tilt(angle) { this.servo_two(angle); };
+  goto_home() { this.pan(0); this.tilt(0); };
 
   python_command(command_string) {
     if (this.python === null) {
