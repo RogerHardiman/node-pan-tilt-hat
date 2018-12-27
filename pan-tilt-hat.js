@@ -54,7 +54,7 @@ class PanTiltHAT {
     if (this.pan_position > 90) this.pan_position = 90;
     if (this.pan_position < -90) this.pan_position = -90;
     this.pan_speed = 0;
-    this.python_command('pan '+ angle+'\n');
+    this.python_command('pan '+ Math.round(this.pan_position) +'\n');
   }
 
   // Move Servo Two to 'angle'
@@ -63,7 +63,7 @@ class PanTiltHAT {
     if (this.tilt_position > 80) this.tilt_position = 80;
     if (this.tilt_position < -80) this.tilt_position = -80;
     this.tilt_speed = 0;
-    this.python_command('tilt '+ angle+'\n');
+    this.python_command('tilt '+ Math.round(this.tilt_position) +'\n');
   }
 
   // Alias for Servo One and Servo Two 
