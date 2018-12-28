@@ -12,6 +12,7 @@ The library impements
    tilt(angle)
    servo_one(angle)
    servo_two(angle)
+   goto_home()
 
 2) Continual Move API
 The API is based on analogue CCTV systems where a a command will start the pan

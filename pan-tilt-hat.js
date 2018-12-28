@@ -1,6 +1,7 @@
 //
 // Node Wrapper for Pimoroni Pan-Tilt HAT
 // Copyright (c) Roger Hardiman 2017
+// Copyright (c) 2018 Casper Meijn
 //
 // PIMORONI API (ABSOLUTE POSITIONING)
 // The APIs implemented are
@@ -50,20 +51,25 @@ class PanTiltHAT {
   // Move Servo One to 'angle'
   servo_one(angle) {
     this.pan_position = angle;
+    if (this.pan_position > 90) this.pan_position = 90;
+    if (this.pan_position < -90) this.pan_position = -90;
     this.pan_speed = 0;
-    this.python_command('pan '+ angle+'\n');
+    this.python_command('pan '+ Math.round(this.pan_position) +'\n');
   }
 
   // Move Servo Two to 'angle'
   servo_two(angle) {
     this.tilt_position = angle;
+    if (this.tilt_position > 80) this.tilt_position = 80;
+    if (this.tilt_position < -80) this.tilt_position = -80;
     this.tilt_speed = 0;
-    this.python_command('tilt '+ angle+'\n');
+    this.python_command('tilt '+ Math.round(this.tilt_position) +'\n');
   }
 
   // Alias for Servo One and Servo Two 
   pan(angle)  { this.servo_one(angle); };
   tilt(angle) { this.servo_two(angle); };
+  goto_home() { this.pan(0); this.tilt(0); };
 
   python_command(command_string) {
     if (this.python === null) {
