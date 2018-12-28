@@ -1,6 +1,6 @@
 {
   "name": "pan-tilt-hat",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Pimoroni Pan Tilt HAT for NodeJS",
   "main": "pan-tilt-hat.js",
   "scripts": {
@@ -16,14 +16,14 @@
     "Pi"
   ],
   "homepage": "http://github.com/RogerHardiman/node-pan-tilt-hat",
-  "repository":
-    { "type" : "git",
-      "url"  : "http://github.com/RogerHardiman/node-pan-tilt-hat"
-    },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/RogerHardiman/node-pan-tilt-hat"
+  },
   "author": "Roger Hardiman",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "~3.4.2",
+    "mocha": "~5.2.0",
     "nimble": "~0.0.2"
   }
 }
