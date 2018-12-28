@@ -1,6 +1,6 @@
 {
   "name": "pan-tilt-hat",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Pimoroni Pan Tilt HAT for NodeJS",
   "main": "pan-tilt-hat.js",
   "scripts": {
