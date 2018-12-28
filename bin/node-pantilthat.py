@@ -32,11 +32,13 @@
 import pantilthat 
 import sys
 
-sys.stdout.write('Valid commands are\n');
-sys.stdout.write('pan angle\n');
-sys.stdout.write('tilt angle\n');
-sys.stdout.write('goto angle angle\n');
-sys.stdout.write('exit\n');
+print('Valid commands are');
+print('pan angle');
+print('tilt angle');
+print('goto angle angle');
+print('get_pan');
+print('get_tilt');
+print('exit');
 
 while True:
     line = sys.stdin.readline();
@@ -46,12 +48,16 @@ while True:
         command = list[0];
  
         if (command == 'pan' and len(list)>=2):
-            pantilthat.pan(int(list[1]));
+            pantilthat.pan(float(list[1]));
         elif (command == 'tilt' and len(list)>=2):
-            pantilthat.tilt(int(list[1]));
+            pantilthat.tilt(float(list[1]));
         elif (command == 'goto' and len(list)>=3):
-            pantilthat.pan(int(list[1]));
-            pantilthat.tilt(int(list[2]));
+            pantilthat.pan(float(list[1]));
+            pantilthat.tilt(float(list[2]));
+        elif (command == 'get_pan'):
+            print(pantilthat.get_pan());
+        elif (command == 'get_tilt'):
+            print(pantilthat.get_tilt());
         elif (command == 'exit'):
             exit();
 
