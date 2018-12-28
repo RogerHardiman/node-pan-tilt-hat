@@ -84,6 +84,7 @@ class PanTiltHAT {
   // calculate new angle for continuous move API using current position
   // and current speed
   calculate_angles() {
+    if (this.pan_speed === 0 && this.tilt_speed === 0) return;
     var new_pan_position = this.pan_position + (this.pan_speed/10);
     var new_tilt_position = this.tilt_position + (this.tilt_speed/10);
     // range check
@@ -133,6 +134,15 @@ class PanTiltHAT {
   stop() {
     this.pan_speed = 0;
     this.tilt_speed = 0;
+  }
+
+  close() {
+    clearTimeout(this.timer);
+    this.timer = null;
+    if (this.python != null) {
+      this.python_command('exit\n');
+      this.python = null;
+    }
   }
 
 }

@@ -70,5 +70,12 @@ flow.series([
         completion_callback();
     },
 
+    // TEST - Exit 
+    function (completion_callback) {
+        console.log('Close PanTiltHat class');
+        pan_tilt.close();
+        completion_callback();
+    },
+
 ]);
 
