@@ -70,6 +70,15 @@ flow.series([
         completion_callback();
     },
 
+    // TEST - Set some pixels
+    function (completion_callback){
+        console.log('Set Some Pixels');
+        pan_tilt.light_type("GRB");
+        pan_tilt.light_mode("WS2812");
+        pan_tilt.set_all(255, 0, 0);
+        pan_tilt.show();
+    },
+
     // TEST - Exit 
     function (completion_callback) {
         console.log('Close PanTiltHat class');

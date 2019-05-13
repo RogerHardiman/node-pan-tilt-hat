@@ -15,6 +15,12 @@ The library impements
    tilt(angle)       - tilt angle is -80..+80
    servo_two(angle)  - tilt angle is -80..+80
    goto_home()       - Set Pan to 0 and Tilt to 0
+   light_type()      - Set light type to RGB, GRB, RGBW or GRBW
+   light_mode()      - Set light mode to PWM or WS2812
+   brightness()      - Set brightness in PWM mode between 0 and 255
+   set_all()         - Set colour of all pixels in WS2812 mode
+   set_pixel()       - Set colour of individual pixel in WS2812 mode
+   show()            - Make changes to pixel settings take effect
 
 2) Continual Move API
 The API is based on analogue CCTV systems where a command will start the pan
