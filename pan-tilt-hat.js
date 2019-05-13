@@ -89,7 +89,7 @@ class PanTiltHAT {
       {
         command += ' ' + w;
       }
-      this.python.command(command + '\n');
+      this.python_command(command + '\n');
     }
   }
 
@@ -107,13 +107,13 @@ class PanTiltHAT {
       {
         command += ' ' + w;
       }
-      this.python.command(command + '\n');
+      this.python_command(command + '\n');
     }
   }
 
   show()
   {
-    this.python(command('show\n'));
+    this.python_command('show\n');
   }
 
 
