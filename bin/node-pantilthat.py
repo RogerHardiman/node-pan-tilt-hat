@@ -44,6 +44,15 @@ print('  tilt angle');
 print('  goto angle angle');
 print('  get_pan');
 print('  get_tilt');
+
+# New commands for Neopixel
+print('  light_type');
+print('  light_mode');
+print('  brightness');
+print('  set_pixel index red green blue white=None')
+print('  set_all red green blue white=None')
+print('  show');
+
 print('  exit');
 
 while True:
@@ -68,6 +77,37 @@ while True:
                     print(pantilthat.get_pan());
                 elif (command == 'get_tilt'):
                     print(pantilthat.get_tilt());
+                elif( command == 'light_type' and len(list)>=2):
+                    pantilthat.light_type();
+                    if( list[1] == 'RGB' ):
+                        pantilthat.light_mode(pantilthat.RGB);
+                    elif( list[1] == 'GRB' ):
+                        pantilthat.light_mode(pantilthat.GRB);
+                    elif( list[1] == 'RGBW' ):
+                        pantilthat.light_mode(pantilthat.RGBW);
+                    elif( list[1] == 'GRBW' ):
+                        pantilthat.light_mode(pantilthat.GRBW);
+                    else:
+                        print('error: light_mode requires parameter PWM or WS2812'); 
+                elif( command == 'light_mode' and len(list)>=2):
+                    if( list[1] == 'PWM' ):
+                        pantilthat.light_mode(pantilthat.PWM);
+                    elif( list[1] == 'WS2812' ):
+                        pantilthat.light_mode(pantilthat.WS2812);
+                    else:
+                        print('error: light_mode requires parameter PWM or WS2812'); 
+                if (command == 'brightness' and len(list)>=2):
+                    pantilthat.brightness(float(list[1]));
+                elif( command == 'set_all' and len(list)==4):
+                        pantilthat.set_all(int(list[1]), int(list[2]), int(list[3]));
+                elif( command == 'set_all' and len(list)==5):
+                        pantilthat.set_all(int(list[1]), int(list[2]), int(list[3]), int(list[4]));
+                elif( command == 'set_pixel' and len(list)==5):
+                        pantilthat.set_pixel(int(list[1]), int(list[2]), int(list[3]), int(list[4]));
+                elif( command == 'set_pixel' and len(list)==6):
+                        pantilthat.set_pixel(int(list[1]), int(list[2]), int(list[3]), int(list[4]), int(list[5]));
+                elif( command == 'show'):
+                        pantilthat.show();
                 else:
                     print('error processing command'); 
             except:

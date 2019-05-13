@@ -48,6 +48,75 @@ class PanTiltHAT {
     this.timer = setInterval(this.calculate_angles.bind(this),100);
   }
 
+  light_type(lightType)
+  {
+    if( lightType==="RGB" || 
+        lightType==="GRB" || 
+        lightType=="RGBW" ||
+        lightType==="GRBW")
+      {
+        this.python_command('light_type ' + lightType + '\n');        
+      }
+  }
+
+  light_mode(lightMode)
+  {
+    if( lightMode==="PWM" || 
+         lightMode==="WS2812" )
+      {
+        this.python_command('light_mode ' + lightMode + '\n');        
+      }
+  }
+
+  brightness(brightness)
+  {
+    if( brightness>=0 && brightness<=255)
+    {
+      this.python_command('light_mode ' + brightness);
+    }
+  }
+
+  set_all(r, g, b, w)
+  {
+    r=parseInt(r);
+    g=parseInt(g);
+    b=parseInt(b);
+    if( !isNaN(r) && !isNaN(g) && !isNaN(b))
+    {
+      let command = 'set_all ' + r + ' ' + g + ' ' + b;
+      w = parseInt(w);
+      if( !isNaN(w))
+      {
+        command += ' ' + w;
+      }
+      this.python.command(command + '\n');
+    }
+  }
+
+  set_pixel(index, r, g, b, w)
+  {
+    index = parseInt(index);
+    r=parseInt(r);
+    g=parseInt(g);
+    b=parseInt(b);
+    if( !isNaN(index) && !isNaN(r) && !isNaN(g) && !isNaN(b))
+    {
+      let command = 'set_all ' + index + ' ' + r + ' ' + g + ' ' + b;
+      w = parseInt(w);
+      if( !isNaN(w))
+      {
+        command += ' ' + w;
+      }
+      this.python.command(command + '\n');
+    }
+  }
+
+  show()
+  {
+    this.python(command('show\n'));
+  }
+
+
   // Move Servo One to 'angle'
   servo_one(angle) {
     this.pan_position = angle;
@@ -144,6 +213,8 @@ class PanTiltHAT {
       this.python = null;
     }
   }
+
+
 
 }
 
