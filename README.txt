@@ -44,3 +44,10 @@ The library is being used in the Raspbery Pi ONVIF Server project (RPOS) that
 turns a Pi + Pi Camera + Pan-Tilt HAT + AdaFruit Pan/Tilt assembly
 into an ONVIF Profile S CCTV Camera.
 
+Other Raspberry Pi Pan/Tilt systems
+-----------------------------------
+Take a look at the github project called "node-pan-tilt-driver"
+This is a pure Javascript driver for
+* Pimoroni Pan Tilt HAT with Pimoroni custom PIC chipset
+* Waveshare Pan Tilt HAT with PCA9685 chipset
+* Arducam Pan Tilt Platform (B0283SKU Model) with PCA9685 chipset
